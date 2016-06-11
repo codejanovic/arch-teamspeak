@@ -17,14 +17,14 @@ ADD setup/nobody/*.sh /home/nobody/
 #############
 
 # make executable and run bash scripts to install app
-RUN chmod +x /root/*.sh /home/nobody/*.sh && \
+RUN mkdir /config && chmod +x /root/*.sh /home/nobody/*.sh && \
 	/bin/bash /root/install.sh
 
 # docker settings
 #################
 
 # map /config to host defined config path (used to store configuration from app)
-VOLUME /config
+# VOLUME /config
 
 # set permissions
 #################
